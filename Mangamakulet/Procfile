@@ -1,0 +1,1 @@
+web: gunicorn Mangamakulet.wsgi --log-file -

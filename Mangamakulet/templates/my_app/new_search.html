@@ -1,0 +1,43 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'Mangamakulet/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+
+
+
+<body>
+{% include 'nav_bar.html' %}
+<h1 style="text-align : center">{{ search | title }}</h1>
+<div class = "container">
+
+        <div class="row">
+            {% for post in final_postings %}
+
+                <div class="col-sm-3">
+                    <div class="card" style="width:400px">
+                        <img class="card-img-top" src="{{ post.2 }}" height="200" width="200" alt="Card image" >
+                    <div class="card-body">
+                        <bold><p class="text-success">{{ post.0 }}</p></bold>
+                        <p class="card-text">{{ post.3 }}</p>
+                        <p class="card-text">{{ post.4 }}</p>
+                        <a href="{{ post.1 }}" target="_blank" class="btn btn-primary">See Link</a>
+                    </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
